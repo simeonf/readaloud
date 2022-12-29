@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1><a href="{{ book.get_absolute_url }}">{{ book }}</a></h1>
+
+{{ book.description }}
+
+
+{% endblock %}
