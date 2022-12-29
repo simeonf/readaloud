@@ -68,7 +68,6 @@ TEMPLATES = [
     },
 ]
 
-print(TEMPLATES[0]['DIRS'])
 WSGI_APPLICATION = 'readaloud.wsgi.application'
 
 
