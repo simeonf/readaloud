@@ -12,7 +12,11 @@ class Author(models.Model):
 class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     illustrator = models.ForeignKey(
-        Author, null=True, blank=True, on_delete=models.CASCADE, related_name="illustrator_set"
+        Author,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name="illustrator_set",
     )
     name = models.CharField(max_length=144)
     slug = models.SlugField(null=False)  # TODO: Needs to be unique
