@@ -22,7 +22,7 @@ class Book(models.Model):
     slug = models.SlugField(null=False)  # TODO: Needs to be unique
     description = models.TextField()
     year = models.IntegerField()
-
+    age = models.IntegerField(blank=True, null=True, help_text="Add an appropriate age for this book.")
     def __str__(self):
         return str(self.name)
 
