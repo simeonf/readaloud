@@ -1,11 +1,16 @@
-{% extends "base.html" %}
+{% extends "book/book_base.html" %}
 
-{% block main %}
-<h1><a href="{{ book.get_absolute_url }}">{{ book }}</a></h1>
+{% block title %}{{ book }}{% endblock %}
+
+{% block book_content %}
+
+
+<h1><a href="..">Books</a> :: <a href="{{ book.get_absolute_url }}">{{ book }}</a></h1>
 
 {{ book.description }}
 
-
+{% if book.age %}
 <p>Ages: {{ book.age }}+<p>
+{% endif %}
 
 {% endblock %}
