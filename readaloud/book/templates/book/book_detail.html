@@ -4,10 +4,10 @@
 
 {% block book_content %}
 
-
 <h1><a href="..">Books</a> :: <a href="{{ book.get_absolute_url }}">{{ book }}</a></h1>
 
-{{ book.description }}
+{% load markdowny_tags %}
+{{ book.description|markdowny }}
 
 {% if book.age %}
 <p>Ages: {{ book.age }}+<p>
