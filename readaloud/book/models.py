@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from markdownx.models import MarkdownxField
 
 
 class Author(models.Model):
@@ -20,7 +21,7 @@ class Book(models.Model):
     )
     name = models.CharField(max_length=144)
     slug = models.SlugField(null=False)  # TODO: Needs to be unique
-    description = models.TextField()
+    description = MarkdownxField(help_text="Use markdown for formatting")
     year = models.IntegerField()
     age = models.IntegerField(
         blank=True, null=True, help_text="Add an appropriate age for this book."
