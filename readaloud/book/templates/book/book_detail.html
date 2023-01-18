@@ -3,14 +3,26 @@
 {% block title %}{{ book }}{% endblock %}
 
 {% block book_content %}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="..">Books</a></li>
+    <li class="is-active"><a href="#">{{ book }}</a></li>
+  </ul>
+</nav>
 
-<h1><a href="..">Books</a> :: <a href="{{ book.get_absolute_url }}">{{ book }}</a></h1>
+<hr/>
+
+<h1 class="title is-1">{{ book }}</h1>
 
 {% load markdowny_tags %}
 {{ book.description|markdowny }}
 
 {% if book.age %}
 <p>Ages: {{ book.age }}+<p>
+{% endif %}
+
+{% if book.goodreads %}
+<p><a target="_new" href="{{ book.goodreads }}">Goodreads Link</a><p>
 {% endif %}
 
 {% endblock %}

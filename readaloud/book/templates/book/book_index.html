@@ -5,7 +5,14 @@ Book List
 {% endblock %}
 
 {% block book_content %}
-<h1><a href="..">Books</a></h1>
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li class="is-active"><a href="#">Books</a></li>
+  </ul
+</nav>
+
+<hr/>
+<h1 class="title is-1">Books</h1>
 <ul>
   {% for book in books %}
     <li><a href="{{ book.get_absolute_url }}">{{ book }}</a></li>

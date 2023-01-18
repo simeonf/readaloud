@@ -26,6 +26,9 @@ class Book(models.Model):
     age = models.IntegerField(
         blank=True, null=True, help_text="Add an appropriate age for this book."
     )
+    goodreads = models.URLField(
+        help_text="Add link to goodreads page", blank=True, null=True
+    )
 
     def __str__(self):
         return str(self.name)
