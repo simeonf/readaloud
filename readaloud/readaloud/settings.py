@@ -82,7 +82,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "OPTIONS": {
-            "read_default_file": "/home/simeon/work/skillmap/my.cnf",
+            "read_default_file": "/home/simeon/work/readaloud/my.cnf",
         },
     }
 }
