@@ -11,6 +11,7 @@ def test_goodreads_link_exists(client):
     assertContains(response, "http://goodreads.com/url")
     assertContains(response, "Goodreads")
 
+
 @pytest.mark.django_db
 def test_goodreads_link_does_not_exist(client):
     book = BookFactory(goodreads="")
