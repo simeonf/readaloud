@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4"><a href="{{ book.get_absolute_url }}">{{ book }}</a></p>
+        <p class="subtitle is-6">by {{ book.author }}</p>
+      </div>
+    </div>
+    <div class="content">
+      {% if book.age %}
+      Age: {{ book.age }}+
+      {% endif %}
+      {% for tag in book.categories.names %}
+        {% if forloop.first %}<p>{% endif %}
+        <span class="tag is-info">{{tag }}</span>
+        {% if forloop.last %}</p>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
