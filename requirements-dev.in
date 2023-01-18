@@ -1,0 +1,10 @@
+black==22.12.0
+fabric==2.7.1
+ruff==0.0.223
+Faker==16.6.0
+factory-boy==3.2.1
+pytest-django==4.5.2
+django-extensions==3.2.1
+django-taggit==3.1.0
+pip-tools==6.12.1
+pipdeptree==2.3.3
