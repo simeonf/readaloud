@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
+
 from markdownx.models import MarkdownxField
+from taggit.managers import TaggableManager
 
 
 class Author(models.Model):
@@ -29,6 +31,8 @@ class Book(models.Model):
     goodreads = models.URLField(
         help_text="Add link to goodreads page", blank=True, null=True
     )
+
+    categories = TaggableManager()
 
     def __str__(self):
         return str(self.name)
