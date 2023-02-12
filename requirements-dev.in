@@ -8,3 +8,4 @@ django-extensions==3.2.1
 django-taggit==3.1.0
 pip-tools==6.12.1
 pipdeptree==2.3.3
+django_debug_toolbar==3.8.1
