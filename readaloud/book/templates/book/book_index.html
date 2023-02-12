@@ -13,9 +13,13 @@ Book List
 
 <hr />
 <h1 class="title is-1">Books</h1>
-<ul>
+<div class="tile is-ancestor" style="flex-wrap: wrap;">
   {% for book in books %}
-    <li><a href="{{ book.get_absolute_url }}">{{ book }}</a></li>
+    <div class="tile is-parent is-3">
+    <div class="tile is-child">
+    {% include "book/card.html" %}
+    </div>
+    </div>
   {% endfor %}
-</ul>
+</div>
 {% endblock %}

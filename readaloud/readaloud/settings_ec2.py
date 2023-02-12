@@ -3,6 +3,7 @@ from .settings import *  # noqa: F403
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
+        "NAME": "readaloud",
         "OPTIONS": {
             "read_default_file": "/home/ubuntu/my.cnf",
         },
