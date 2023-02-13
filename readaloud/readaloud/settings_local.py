@@ -1,8 +1,6 @@
 from .settings import *  # noqa: F403
 
-INSTALLED_APPS += [  # noqa: F405
-    "django_extensions",
-    "debug_toolbar"]
+INSTALLED_APPS += ["django_extensions", "debug_toolbar"]  # noqa: F405
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
