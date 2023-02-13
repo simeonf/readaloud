@@ -4,3 +4,4 @@ django-markdownx==4.0.0b1
 django-markdowny==0.2.4
 mysqlclient==2.1.1
 django-tagulous==1.3.3
+Pillow==9.4.0

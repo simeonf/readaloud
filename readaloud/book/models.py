@@ -33,6 +33,8 @@ class Book(models.Model):
         help_text="Add link to goodreads page", blank=True, null=True
     )
 
+    cover = models.ImageField(blank=True, null=True, upload_to="books/covers/")
+
     def __str__(self):
         return str(self.name)
 

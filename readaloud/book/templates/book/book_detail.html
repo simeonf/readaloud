@@ -13,6 +13,18 @@
 <hr/>
 
 <h1 class="title is-1">{{ book }}</h1>
+{% if book.categories.all %}
+<div class="block">
+  {% for tag in book.categories.all %} <span class="tag is-link is-light">{{ tag }}</span> {% endfor %}
+</div>
+{% endif %}
+
+
+{% if book.cover %}
+  <figure class="is-pulled-left cover-detail">
+  <img class="" src="{{ book.cover.url }}" alt="Cover Photo" width="256">
+  </figure>
+{% endif %}
 
 {% load markdowny_tags %}
 {{ book.description|markdowny }}
