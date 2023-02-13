@@ -13,6 +13,9 @@ Book List
 
 <hr />
 <h1 class="title is-1">Books</h1>
+<div class="block">
+  Categories: {% for tag in tags %} <span class="tag is-link is-light">{{ tag }}</span> {% endfor %}
+</div>
 <div class="tile is-ancestor" style="flex-wrap: wrap;">
   {% for book in books %}
     <div class="tile is-parent is-3">

@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                     "count",
                     models.IntegerField(
                         default=0,
-                        help_text="Internal counter of how many times this tag is in use",
+                        help_text="Internal counter of how many times this tag is in use",  # noqa
                     ),
                 ),
                 (
