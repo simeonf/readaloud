@@ -4,10 +4,15 @@ from book.models import Book
 
 from fbv.decorators import render_html
 
+
 @render_html()
 def book_index(request):
     categories = Book.categories.tag_model
-    return {"books": Book.objects.all(), "page": "book", 'tags': categories.objects.all()}
+    return {
+        "books": Book.objects.all(),
+        "page": "book",
+        "tags": categories.objects.all(),
+    }
 
 
 @render_html()
