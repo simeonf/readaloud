@@ -15,4 +15,6 @@ ALLOWED_HOSTS = ["*"]
 
 STATIC_ROOT = "/var/www/apps/readaloud/static"
 
+MEDIA_ROOT = "/home/ubuntu/readaloud/readaloud/media"
+
 DEBUG = False
