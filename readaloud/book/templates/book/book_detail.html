@@ -18,6 +18,21 @@
   {% for tag in book.categories.all %} <span class="tag is-link is-light">{{ tag }}</span> {% endfor %}
 </div>
 {% endif %}
+{% if book.series_set.all %}
+  <div class="block is-size-7">
+  {% with book.series_set.all.first as series %}
+    <span class="tag is-info is-rounded" style="float:right">Series!</span>
+    <p>{{ series }}:
+    {% for sub_book in series.book.all %}
+      {% if sub_book != book %}
+          <a href="{{ sub_book.get_absolute_url }}">{{ sub_book }}</a> {% if not forloop.last %}/{% endif %}
+      {% endif %}
+    {% endfor %}
+    </p>
+
+  {% endwith %}
+  </div>
+{% endif %}
 
 
 {% if book.cover %}
