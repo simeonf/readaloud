@@ -12,6 +12,11 @@ class Author(models.Model):
         return str(self.name)
 
 
+class VisibleBookManager(models.Manager):
+    def all_visible(self):
+        return self.filter(display=True)
+
+
 class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     illustrator = models.ForeignKey(
@@ -32,8 +37,10 @@ class Book(models.Model):
     goodreads = models.URLField(
         help_text="Add link to goodreads page", blank=True, null=True
     )
-
+    display = models.BooleanField(default=True, help_text="Uncheck to hide on the site.")
     cover = models.ImageField(blank=True, null=True, upload_to="books/covers/")
+
+    objects = VisibleBookManager()
 
     def __str__(self):
         return str(self.name)

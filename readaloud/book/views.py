@@ -9,7 +9,7 @@ from fbv.decorators import render_html
 def book_index(request):
     categories = Book.categories.tag_model
     return {
-        "books": Book.objects.all(),
+        "books": Book.objects.all_visible(),
         "page": "book",
         "tags": categories.objects.all(),
     }
@@ -17,4 +17,4 @@ def book_index(request):
 
 @render_html()
 def book_detail(request, slug):
-    return {"book": get_object_or_404(Book, slug=slug), "page": "book"}
+    return {"book": get_object_or_404(Book, slug=slug, display=True), "page": "book"}
